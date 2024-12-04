@@ -57,6 +57,7 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,12 +65,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4200",
-]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'Sistema.urls'
 
@@ -162,3 +161,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # to import the pictures
 MEDIA_URL = '/media/'  # URL pública para os arquivos
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+
+
+# MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:4200",  # URL do Angular
+# ]

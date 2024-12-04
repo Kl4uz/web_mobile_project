@@ -64,7 +64,7 @@ class event_create(LoginRequiredMixin, CreateView):
 class API_events(ListAPIView):
 
     serializer_class = event_serializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     authentication_classes = [TokenAuthentication]
 
     def get_queryset(self):

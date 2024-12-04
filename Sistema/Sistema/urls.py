@@ -9,7 +9,7 @@ urlpatterns = [
     path('', authuser, name='auth-user'),
     path('login', login, name = 'login'),
     path('cadastro', cadastro, name = 'cadastro'),
-    path('home/', include('events.urls'), name ='events-home'),
+    path('api/', include('events.urls'), name ='events-home'),
 
 ]
 
